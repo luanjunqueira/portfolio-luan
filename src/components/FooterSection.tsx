@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Linkedin, Mail } from "lucide-react";
+import { MessageCircle, Mail, Copy } from "lucide-react";
+import { useState } from "react";
 
 const FooterSection = () => {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+  const email = "luan.junqueiraa@gmail.com";
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <footer id="contact" className="py-20 px-6 relative">
@@ -21,52 +30,38 @@ const FooterSection = () => {
           </p>
         </div>
 
-        {/* Contact Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        {/* Contact Section */}
+        <div className="flex flex-col items-center gap-6 mb-16">
+          {/* WhatsApp Button */}
           <a
             href="https://wa.me/5512982055846?text=Ola%20Luan"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto"
           >
             <Button 
               size="lg" 
-              className="w-full bg-gradient-primary text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl glow-effect hover:opacity-90 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl glow-effect hover:opacity-90 transition-all duration-300 hover:scale-105"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>
           </a>
 
-          <a
-            href="https://www.linkedin.com/in/luanjunqueira"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto"
-          >
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="w-full border-border hover:border-primary hover:bg-primary/10 font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
+          {/* Email Display */}
+          <div className="flex items-center gap-3 bg-card/50 border border-border rounded-xl px-6 py-4">
+            <Mail className="w-5 h-5 text-primary" />
+            <span className="text-foreground font-medium select-all">{email}</span>
+            <button
+              onClick={copyEmail}
+              className="ml-2 p-2 hover:bg-primary/10 rounded-lg transition-colors"
+              title="Copiar e-mail"
             >
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn
-            </Button>
-          </a>
-
-          <a
-            href="mailto:luan@junqueira.tech"
-            className="w-full sm:w-auto"
-          >
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="w-full border-border hover:border-primary hover:bg-primary/10 font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              E-mail
-            </Button>
-          </a>
+              <Copy className="w-4 h-4 text-muted-foreground hover:text-primary" />
+            </button>
+            {copied && (
+              <span className="text-sm text-primary animate-fade-in">Copiado!</span>
+            )}
+          </div>
         </div>
 
         {/* Divider */}
