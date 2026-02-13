@@ -24,29 +24,29 @@ const HeroSection = () => {
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-8">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-sm font-medium text-muted-foreground">
-            Analista de Soluções de TI | Full Stack & Dados
+            Full Stack Developer | Automação Inteligente & IA
           </span>
         </div>
 
         {/* Name */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-          <span className="text-foreground">Luan</span>{" "}
-          <span className="text-gradient">Junqueira</span>
+          <span className="text-foreground">Luan Junqueira</span>{" "}
+          <span className="text-gradient">Carvalho Santos</span>
         </h1>
 
         {/* Headline */}
         <h2 className="text-2xl md:text-3xl font-semibold text-foreground/90 mb-6 max-w-3xl mx-auto leading-tight">
-          Unindo Lógica Algorítmica Rigorosa à Prática de Mercado.
+          Orquestrando Sistemas Inteligentes com Código e IA.
         </h2>
 
         {/* Sub-headline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Profissional agnóstico à tecnologia: utilizo a ferramenta certa para o problema. 
+          Profissional agnóstico à tecnologia: uso a ferramenta certa para o problema. 
           Foco na entrega eficiente, seja em{" "}
           <span className="text-foreground font-medium">Python</span>,{" "}
-          <span className="text-foreground font-medium">Java</span>,{" "}
-          <span className="text-foreground font-medium">C#</span> ou{" "}
-          <span className="text-foreground font-medium">JavaScript</span>.
+          <span className="text-foreground font-medium">NestJS</span>,{" "}
+          <span className="text-foreground font-medium">React</span> ou{" "}
+          <span className="text-foreground font-medium">IA Generativa</span>.
         </p>
 
         {/* CTA Button */}

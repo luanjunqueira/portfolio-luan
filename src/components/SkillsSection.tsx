@@ -1,32 +1,41 @@
-import { Code, Database, LineChart } from "lucide-react";
+import { Brain, Code, Database, Plug } from "lucide-react";
 
 const skillPillars = [
   {
-    title: "Desenvolvimento",
+    title: "IA & Automação",
+    icon: Brain,
+    skills: ["IA Generativa", "AI Agents", "N8N", "RAG", "NLP", "Python", "Memory Systems"],
+    color: "from-violet-500/20 to-purple-500/20",
+    borderColor: "border-violet-500/30",
+    iconBg: "bg-violet-500/20",
+    iconColor: "text-violet-400",
+  },
+  {
+    title: "Full Stack",
     icon: Code,
-    skills: ["Python", "Java", "C#", "JavaScript (React/Node)", "Git"],
+    skills: ["React + TypeScript", "NestJS + Node.js", "Next.js (conceitos)", "Redux", "TailwindCSS", "WebSockets"],
     color: "from-blue-500/20 to-cyan-500/20",
     borderColor: "border-blue-500/30",
     iconBg: "bg-blue-500/20",
     iconColor: "text-blue-400",
   },
   {
-    title: "Dados & Infra",
+    title: "Backend & Data",
     icon: Database,
-    skills: ["SQL (Postgres/MySQL)", "NoSQL (Redis)", "Docker", "ETL"],
+    skills: ["PostgreSQL", "Redis", "SQL Avançado", "APIs REST", "OAuth 2.0", "Docker"],
     color: "from-emerald-500/20 to-teal-500/20",
     borderColor: "border-emerald-500/30",
     iconBg: "bg-emerald-500/20",
     iconColor: "text-emerald-400",
   },
   {
-    title: "Negócio & Visualização",
-    icon: LineChart,
-    skills: ["Power BI (DAX)", "Google Analytics", "Scrum/Kanban"],
-    color: "from-violet-500/20 to-purple-500/20",
-    borderColor: "border-violet-500/30",
-    iconBg: "bg-violet-500/20",
-    iconColor: "text-violet-400",
+    title: "Integrações",
+    icon: Plug,
+    skills: ["Gmail API", "Google Calendar API", "WhatsApp API", "Webhooks", "HTTP Requests"],
+    color: "from-amber-500/20 to-orange-500/20",
+    borderColor: "border-amber-500/30",
+    iconBg: "bg-amber-500/20",
+    iconColor: "text-amber-400",
   },
 ];
 
@@ -51,7 +60,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillPillars.map((pillar, index) => (
             <div
               key={index}
@@ -62,8 +71,8 @@ const SkillsSection = () => {
               
               <div className="relative">
                 {/* Icon */}
-                <div className={`w-16 h-16 rounded-xl ${pillar.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <pillar.icon className={`w-8 h-8 ${pillar.iconColor}`} />
+                <div className={`w-14 h-14 rounded-xl ${pillar.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <pillar.icon className={`w-7 h-7 ${pillar.iconColor}`} />
                 </div>
 
                 {/* Title */}
@@ -79,7 +88,7 @@ const SkillsSection = () => {
                       className="flex items-center gap-3 text-muted-foreground group-hover:text-foreground transition-colors"
                     >
                       <span className={`w-1.5 h-1.5 rounded-full ${pillar.iconColor.replace('text-', 'bg-')}`} />
-                      <span className="font-medium">{skill}</span>
+                      <span className="font-medium text-sm">{skill}</span>
                     </li>
                   ))}
                 </ul>
@@ -93,8 +102,7 @@ const SkillsSection = () => {
           <div className="inline-flex items-center gap-4 px-6 py-4 rounded-xl bg-card/50 border border-border">
             <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
             <p className="text-muted-foreground">
-              <span className="text-foreground font-medium">Foco na solução, não na ferramenta.</span>{" "}
-              Aprendo rapidamente o que for necessário para entregar resultados.
+              <span className="text-foreground font-medium">Foco na solução, não na ferramenta.</span>
             </p>
           </div>
         </div>

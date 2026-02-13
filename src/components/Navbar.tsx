@@ -36,7 +36,7 @@ const Navbar = () => {
           <a href="#" className="flex items-center gap-2">
             <span className="text-xl font-bold text-gradient">LJ</span>
             <span className="hidden sm:inline text-foreground font-semibold">
-              Luan Junqueira
+              Luan Junqueira C. Santos
             </span>
           </a>
 
